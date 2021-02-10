@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h2 class="heading"> List of Candidates </h2>
+    {% for emp in employee_data %}
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src={{emp.image_url}} loading="lazy" class="img-circle" width="120" height="120">
+        </div>
+        <div class="profile-info">
+            <p><a href=""><strong>{{emp.user_name}}</strong><span>-</span>{{emp.role}}</a></p>
+
+
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{emp.location}}({{emp.tz}})</p>
+            <p><strong>Total Experience:</strong>&nbsp;{{emp.total_exp}}</p>
+            <p><strong>Skills:</strong>&nbsp;{{emp.skills}}</p>
+            <p><strong>About:</strong>&nbsp;{{emp.job_desc}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+

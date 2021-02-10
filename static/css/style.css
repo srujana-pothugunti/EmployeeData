@@ -1,0 +1,28 @@
+.heading{
+text-align: center;
+color:purple;
+font-weight:bold;
+padding:2%;
+text-transform:uppercase;
+}
+.profile-card{
+width:75% !important;
+border-radius: 2px;
+min-height:200;
+z-index:10;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+padding:2%;
+margin:2% auto;
+background: #fff;
+}
+.profile-img{
+display:inline-block;
+padding:1% 6%;
+}
+.profile-img img{
+vertical-align:unset;
+}
+.profile-info{
+display:inline-block;
+}
+
