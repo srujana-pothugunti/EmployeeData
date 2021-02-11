@@ -1,8 +1,10 @@
+.container{
+padding:2%;
+}
 .heading{
 text-align: center;
 color:purple;
 font-weight:bold;
-padding:2%;
 text-transform:uppercase;
 }
 .profile-card{
@@ -24,5 +26,19 @@ vertical-align:unset;
 }
 .profile-info{
 display:inline-block;
+}
+#previous-btn{
+float:left;
+width:100px;
+margin-left:12%;
+}
+#next-btn{
+float:right;
+width:100px;
+margin-right:12%;
+}
+#previous-btn a, #next-btn a{
+text-decoration: none;
+color:#fff;
 }
 

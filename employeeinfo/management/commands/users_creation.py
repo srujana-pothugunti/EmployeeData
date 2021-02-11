@@ -19,7 +19,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         no_of_users = kwargs['no_of_users']
         for fakeuser in range(no_of_users):
-          fake_id = fakedata.bothify(text='??#?##?##').upper()
+          # fake_id = fakedata.bothify(text='??#?##?##').upper()
           fake_name = fakedata.name()
           fake_tz = fakedata.timezone()
           role = fakedata.job()
@@ -29,7 +29,7 @@ class Command(BaseCommand):
           job_desc = fakedata.sentence()
           image_url = fakedata.image_url()
           # Create new user Entry
-          user = User.objects.create(id=fake_id,name=fake_name,tz=fake_tz)
+          user = User.objects.create(name=fake_name,tz=fake_tz)
           acty = JobDetails.objects.create(user=user,role=role,location=location,total_exp=total_exp,skills=skills,job_desc=job_desc,image_url=image_url)
        
         return str(no_of_users)+' Users Created Succesfully'

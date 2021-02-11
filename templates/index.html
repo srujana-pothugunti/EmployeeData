@@ -17,19 +17,30 @@
     {% for emp in employee_data %}
     <div class="profile-card">
         <div class="profile-img">
-            <img src={{emp.image_url}} loading="lazy" class="img-circle" width="120" height="120">
+            <img src="{% static 'images/profile.jpeg' %}" loading="lazy" class="img-circle" width="120" height="120">
         </div>
         <div class="profile-info">
-            <p><a href=""><strong>{{emp.user_name}}</strong><span>-</span>{{emp.role}}</a></p>
+            <p><a href=""><strong>{{emp.user.name}}</strong><span>-</span>{{emp.role}}</a></p>
 
 
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{emp.location}}({{emp.tz}})</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{emp.location}}({{emp.user.tz}})</p>
             <p><strong>Total Experience:</strong>&nbsp;{{emp.total_exp}}</p>
             <p><strong>Skills:</strong>&nbsp;{{emp.skills}}</p>
             <p><strong>About:</strong>&nbsp;{{emp.job_desc}}</p>
         </div>
     </div>
     {% endfor %}
+    {% if employee_data.has_previous %}
+    <button class="btn btn-primary" id="previous-btn">
+            <a href="{% url 'list' %}?page={{employee_data.previous_page_number}}">Previous</a>
+    </button>
+    {% endif %}
+    {% if employee_data.has_next %}
+    <button class="btn btn-primary" id="next-btn">
+        <a href="{% url 'list' %}?page={{employee_data.next_page_number}}">Next</a>
+    </button>
+    {% endif %}
+
 </div>
 </body>
 </html>
