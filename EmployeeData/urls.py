@@ -6,5 +6,6 @@ from employeeinfo import serializers as serializer
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/',views.Index.as_view(),name='list'),
+    path('detail/<pk>',views.Detail.as_view(),name='detail'),
     path('api/users/', serializer.users, name='users'),
 ]

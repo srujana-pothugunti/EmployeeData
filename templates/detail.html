@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="{% static 'images/profile.jpeg' %}" loading="lazy" class="img-circle" width="150" height="150">
+        </div>
+        <div class="detail-heading">
+            <h3 style="font-size:30px; font-weight: bold; color:blue">
+                {{employee_detail.user.name}}
+            </h3>
+            <h4>{{employee_detail.role}}</h4>
+            <p><strong>Total Experience:</strong>&nbsp;{{employee_detail.total_exp}}</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{employee_detail.location}}({{employee_detail.user.tz}})</p>
+        </div>
+        <div class="detail-info">
+            <p><strong style="font-size:28px;">About:</strong></p>
+            <p><strong>Skills:</strong>&nbsp;{{employee_detail.skills}}</p>
+            <p>
+                <strong>Introduction:</strong><br/>
+                I'm {{employee_detail.user.name}} having designation of {{employee_detail.role}}.<br/>
+                I had {{employee_detail.total_exp}} years of experience on {{employee_detail.skills}}.<br/>
+                I'm Currently located at {{employee_detail.location}} {{employee_detail.user.tz}}.<br/>
+                I'm fond of {{employee_detail.job_desc}}.
+            </p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
